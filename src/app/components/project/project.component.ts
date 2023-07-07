@@ -21,6 +21,7 @@ export class ProjectComponent implements OnInit {
   }
 
   getProjects(): void {
+
     this.http.get<any[]>(this.url).subscribe(
       (response: any[]) => {
         this.projects = response;
