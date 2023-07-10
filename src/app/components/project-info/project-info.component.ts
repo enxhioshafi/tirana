@@ -1,7 +1,6 @@
-
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Router, ActivatedRoute } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-project-info',
@@ -11,17 +10,18 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class ProjectInfoComponent implements OnInit {
 
   id: any;
-  projects: any;
+  project: any;
   url = 'http://localhost:8080/projects';
-  projectId: any;
 
-  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
+
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
 // Get the project id from the route parameter
     this.route.params.subscribe(params => {
-      this.projectId = params['id'];
-      this.getProjectById(this.projectId);
+      this.id = params['id'];
+      this.getProjectById(this.id);
     });
   }
 
@@ -34,7 +34,7 @@ export class ProjectInfoComponent implements OnInit {
 
     this.http.get<any>(projectUrl).subscribe(
       (response: any) => {
-        this.projects = response;
+        this.project = response;
       },
       (error: any) => {
         console.error('Error fetching project:', error);

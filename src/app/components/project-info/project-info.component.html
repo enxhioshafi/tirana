@@ -1,11 +1,16 @@
-<table>
-  <tr *ngFor = "let project of projects">
-    <td>{{project.id }}</td>
-    <td>{{project.name}}</td>
-    <td>{{project.description}}</td>
-    <td>
-    </td>
-  </tr>
-</table>
-<h1>hi</h1>
+<div class="container taskmanagment-single">
+  <table [ngClass]="'single-user'">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>{{project.id }}</td>
+      <td>{{project.name}}</td>
+      <td>{{project.description}}</td>
+    </tr>
+  </table>
+</div>
+
 

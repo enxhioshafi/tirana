@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -18,10 +18,11 @@ export class ProjectComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private router: Router
-  ) { }
+  ) {
+  }
 
-  redirectToProjectinfo(): void {
-    this.router.navigate(['/project-info']);
+  redirectToProjectInfo(id: string): void {
+    this.router.navigate(['/project-info', id]);
   }
 
 // Make the HTTP GET request

@@ -1,11 +1,20 @@
-<table>
-  <tr *ngFor = "let project of projects">
-    <td>{{project.id }}</td>
-    <td>{{project.name}}</td>
-    <td>{{project.description}}</td>
-    <td>
-      <button (click)="redirectToProjectinfo()">View</button>
-    </td>
-  </tr>
-</table>
+<div class="container taskmanagment">
+  <h1 [ngClass]="'taskmanager-h1'">TASK MANAGMENT</h1>
+  <table [ngClass]="'taskmanager'">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Details</th>
+    </tr>
+    <tr *ngFor="let project of projects">
+      <td>{{project.id }}</td>
+      <td>{{project.name}}</td>
+      <td>{{project.description}}</td>
+      <td>
+        <button (click)="redirectToProjectInfo(project.id)">View</button>
+      </td>
+    </tr>
+  </table>
+</div>
 
