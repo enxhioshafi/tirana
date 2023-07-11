@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background: url(././assets/images/computer.jpg) no-repeat;
+  background-size: cover;
+}
+
+pagination-controls {
+  padding: 0.1875rem 0.625rem;
+  color: white!important;
+  cursor: default;
+  margin-top: 50px;
+}
+.current {
+  padding: 0.1875rem 0.625rem;
+  background: #046fa2!important;
+  color: #fefefe;
+  cursor: default;
+}
+pagination-controls a:hover {
+  background: #046fa2!important;
+}

@@ -1,19 +1,18 @@
 <div>
-<h3>Add new Project</h3>
+  <h3 style="margin-bottom: 30px;">Add new project</h3>
 
   <form class="overlay">
     <div>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" [(ngModel)]="name">
+      <input type="text" id="name" name="name" [(ngModel)]="name" placeholder="Name">
     </div>
     <br>
     <div>
-      <label for="description">Description:</label>
-      <textarea id="description" name="description" [(ngModel)]="description"></textarea>
+      <textarea id="description" name="description" [(ngModel)]="description" placeholder="Description"></textarea>
     </div>
     <br>
     <div>
-      <button type="button" (click)="addContact($event)">Add Project</button>
+      <button type="button" (click)="addContact($event)"> Add Project <i class="fa fa-plus" aria-hidden="true"></i>
+      </button>
     </div>
   </form>
 </div>
