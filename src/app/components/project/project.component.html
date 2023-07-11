@@ -11,16 +11,28 @@
     </tr>
     <tr *ngFor="let project of projects">
       <td>{{project.id }}</td>
-      <td>{{project.name}}</td>
-      <td>{{project.description}}</td>
+      <td>
+        <ng-container *ngIf="!project.isEditing; else editNameField">{{ project.name }}</ng-container>
+        <ng-template #editNameField>
+          <input type="text" [(ngModel)]="project.updatedName">
+        </ng-template>
+      </td>
+      <td>
+        <ng-container *ngIf="!project.isEditing; else editDescriptionField">{{ project.description }}</ng-container>
+        <ng-template #editDescriptionField>
+          <textarea [(ngModel)]="project.updatedDescription"></textarea>
+        </ng-template>
+      </td>
       <td>
         <button (click)="redirectToProjectInfo(project.id)">View</button>
       </td>
       <td>
-        <button (click)="redirectToProjectInfo(project.id)">Update</button>
+        <button *ngIf="!project.isEditing" (click)="toggleEditMode(project)">Update</button>
+        <button *ngIf="project.isEditing" (click)="updateData(project)">Save</button>
+        <button *ngIf="project.isEditing" (click)="cancelEdit(project)">Cancel</button>
       </td>
       <td>
-        <button (click)="redirectToProjectInfo(project.id)">Delete</button>
+        <button (click)="deleteData(project)">Delete</button>
       </td>
     </tr>
     <br>

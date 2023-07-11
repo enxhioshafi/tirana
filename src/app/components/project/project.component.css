@@ -11,6 +11,7 @@ table, th, td {
   margin: 50px auto;
 }
 
+
 table tr:nth-child(odd) {
   background-color: #fbfbfbe3;
 }
@@ -20,9 +21,10 @@ table tr:nth-child(even) {
 }
 
 .taskmanager button {
-  padding: 15px 30px;
+  padding: 10px 20px;
   border-radius: 30px;
-  border: 0px solid #fff;
+  margin: 2px;
+  border: 0px solid #fff
 }
 
 .taskmanager button:hover {
@@ -66,4 +68,28 @@ table tr:nth-child(even) {
   background: url(../../../assets/images/computer.jpg) no-repeat;
   background-size: cover;
   height: 100%;
+}
+
+@media only screen and (max-device-width: 981px) {
+  table {
+    border: 1px solid #80808012;
+    border-collapse: collapse;
+    padding: 20px;
+    margin: 50px auto;
+    overflow-y: scroll;
+    width: 100%;
+    display: block;
+  }
+}
+
+input, textarea {
+  margin: auto;
+  font-family: inherit;
+  text-transform: inherit;
+  font-size: inherit;
+  background-color: transparent;
+  display: block;
+
+  border-radius: 0px;
+  border: 0px solid #046fa2;
 }

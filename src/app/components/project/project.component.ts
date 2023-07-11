@@ -18,6 +18,8 @@ export class ProjectComponent implements OnInit {
   private newProjectName: any;
   showPopup: boolean = false;
 
+
+
   constructor(
     private http: HttpClient,
     private router: Router
@@ -36,10 +38,14 @@ export class ProjectComponent implements OnInit {
 
 
   getProjects(): void {
-
     this.http.get<any[]>(this.url).subscribe(
       (response: any[]) => {
-        this.projects = response;
+        this.projects = response.map(project => ({
+          ...project,
+          isEditing: false, // Add the isEditing flag to each project
+          updatedName: project.name, // Initialize updatedName with the current name value
+          updatedDescription: project.description // Initialize updatedDescription with the current description value
+        }));
       },
       (error: any) => {
         console.error('Error fetching projects:', error);
@@ -65,6 +71,64 @@ export class ProjectComponent implements OnInit {
     console.log('Inserting data:', data.data);
     console.log('Clicked element ID:', data.id);
   }
+
+  // Update Method
+
+  updateData(project: any) {
+    const updatedData = {
+      id: project.id,
+      name: project.updatedName,
+      description: project.updatedDescription
+      // Include other properties to be updated if needed
+    };
+
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    const updateUrl = `${this.url}`;
+
+    this.http.put(updateUrl, updatedData, { headers }).subscribe(
+      (response) => {
+        console.log('Data updated successfully:', response);
+        project.name = project.updatedName; // Update the name with the updated value
+        project.description = project.updatedDescription; // Update the description with the updated value
+        project.isEditing = false; // Exit edit mode
+      },
+      (error) => {
+        console.error('Error updating data:', error);
+      }
+    );
+  }
+
+
+  toggleEditMode(project: any) {
+    project.isEditing = !project.isEditing;
+    if (!project.isEditing) {
+      project.updatedName = project.name; // Reset the updatedName to the current name value
+      project.updatedDescription = project.description; // Reset the updatedDescription to the current description value
+    }
+  }
+  cancelEdit(project: any) {
+    project.isEditing = false;
+    project.updatedName = project.name; // Reset the updatedName to the current name value
+    project.updatedDescription = project.description; // Reset the updatedDescription to the current description value
+  }
+
+  // Delete Method
+
+  deleteData(project: any) {
+    const deleteUrl = `${this.url}/${project.id}`;
+
+    this.http.delete(deleteUrl).subscribe(
+      (response) => {
+        console.log('Data deleted successfully:', response);
+        // Remove the deleted project from the projects array
+        this.projects = this.projects.filter(p => p.id !== project.id);
+      },
+      (error) => {
+        console.error('Error deleting data:', error);
+      }
+    );
+  }
+
   closePopup() {
     this.showPopup = false;
   }

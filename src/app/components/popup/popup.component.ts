@@ -9,16 +9,9 @@ export class PopupComponent implements OnInit {
   @Output() closePopup: EventEmitter<void> = new EventEmitter<void>();
   @Output() insertData: EventEmitter<void> = new EventEmitter<void>();
 
-  insertedData: any = {};
-  name: any;
-  description: any;
-
 
   close() {
     this.closePopup.emit();
-  }
-  addContact() {
-    this.insertData.emit(this.insertedData);
   }
 
   constructor() { }
