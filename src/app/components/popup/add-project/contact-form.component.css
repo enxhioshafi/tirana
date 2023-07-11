@@ -1,0 +1,42 @@
+input, textarea {
+  margin:  auto;
+  font-family: inherit;
+  text-transform: inherit;
+  font-size: inherit;
+
+  display: block;
+  width: 100%;
+  padding: .4em;
+}
+textarea { height: 80px; resize: none; }
+
+.overlay button {
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: 0px solid #fff;
+}
+
+.overlay button:hover {
+  background-color: #046fa2;
+  color: white;
+}
+ button {
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: 0px solid #fff;
+}
+
+button:hover {
+  background-color: #046fa2;
+  color: white;
+}
+h3 {
+  font-size: 30px;
+  color: #046fa2;
+  font-weight: 800;
+  letter-spacing: 0.05px;
+  text-align: center;
+  margin-top: 0;
+  padding-top: 30px;
+
+}

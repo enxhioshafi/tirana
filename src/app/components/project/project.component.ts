@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient,HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
 
 
@@ -15,6 +15,9 @@ export class ProjectComponent implements OnInit {
 
 
   // Inject the HttpClient module into your component/service
+  private newProjectName: any;
+  showPopup: boolean = false;
+
   constructor(
     private http: HttpClient,
     private router: Router
@@ -43,4 +46,28 @@ export class ProjectComponent implements OnInit {
       }
     );
   }
+  // Make the HTTP POST request
+
+  onClick() {
+    this.http.get('http://localhost:8080/projects').subscribe(response => {
+      // Handle the response data here
+      console.log(response);
+    });
+  }
+
+
+  openPopup() {
+    this.showPopup = true;
+  }
+
+  insertData(data: any) {
+    // Access the inserted data and ID
+    console.log('Inserting data:', data.data);
+    console.log('Clicked element ID:', data.id);
+  }
+  closePopup() {
+    this.showPopup = false;
+  }
+
+
 }

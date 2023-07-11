@@ -1,0 +1,56 @@
+.popup {
+  top: 20%;
+  padding: 50px;
+  transition: all 200ms;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  margin: 50px auto;
+  width: 50%;
+  text-align: center;
+  background-color: #e4eff5;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  padding: 5px 22px;
+  border-radius: 0px;
+  border: 0px solid #fff;
+  margin-right: 5px;
+  right: 0px;
+}
+
+button {
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: 0px solid #fff;
+}
+
+button:hover {
+  background-color: #046fa2;
+  color: white;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: visible;
+  opacity: 1;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}

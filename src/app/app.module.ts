@@ -6,8 +6,9 @@ import {AppComponent} from './app.component';
 import {ProjectComponent} from './components/project/project.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ProjectInfoComponent} from './components/project-info/project-info.component';
-import {HomeComponent} from './home/home.component';
 import {RouterModule} from "@angular/router";
+import { PopupComponent } from './components/popup/popup.component';
+import { ContactFormComponent } from './components/popup/add-project/contact-form.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {RouterModule} from "@angular/router";
     AppComponent,
     ProjectComponent,
     ProjectInfoComponent,
-    HomeComponent,
+    PopupComponent,
+    ContactFormComponent,
   ],
   imports: [
     BrowserModule,
