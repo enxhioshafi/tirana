@@ -11,6 +11,15 @@ table, th, td {
   margin: 50px auto;
 }
 
+.desciption-td {
+  word-wrap: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  border: 0px solid #fff0;
+}
+
 
 table tr:nth-child(odd) {
   background-color: #fbfbfbe3;

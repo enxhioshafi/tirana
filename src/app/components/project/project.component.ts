@@ -132,6 +132,14 @@ export class ProjectComponent implements OnInit {
   closePopup() {
     this.showPopup = false;
   }
+  // Pagination properties
+  currentPage = 1;
+  itemsPerPage = 8;
+
+  // Method to handle page change event
+  pageChanged(event: any): void {
+    this.currentPage = event;
+  }
 
 
 }

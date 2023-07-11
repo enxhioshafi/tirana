@@ -9,7 +9,7 @@
       <th>Update</th>
       <th>Delete</th>
     </tr>
-    <tr *ngFor="let project of projects">
+    <tr *ngFor="let project of projects | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
       <td>{{project.id }}</td>
       <td>
         <ng-container *ngIf="!project.isEditing; else editNameField">{{ project.name }}</ng-container>
@@ -17,7 +17,7 @@
           <input type="text" [(ngModel)]="project.updatedName">
         </ng-template>
       </td>
-      <td>
+      <td class="desciption-td">
         <ng-container *ngIf="!project.isEditing; else editDescriptionField">{{ project.description }}</ng-container>
         <ng-template #editDescriptionField>
           <textarea [(ngModel)]="project.updatedDescription"></textarea>
@@ -39,7 +39,8 @@
     <button (click)="openPopup()">ADD+</button>
 
     <app-popup *ngIf="showPopup" (insertData)="insertData($event)" (closePopup)="closePopup()"></app-popup>
-
   </table>
+  <!-- Pagination controls -->
+  <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
   <br>
 </div>

@@ -3,11 +3,13 @@ body {
   background-size: cover;
   height: 100%;
 }
+
 .container {
   background: url(../../../assets/images/computer.jpg) no-repeat;
   background-size: cover;
   height: 100%;
 }
+
 table, th, td {
   border: 1px solid #80808012;
   border-collapse: collapse;
@@ -42,17 +44,19 @@ table tr:nth-child(even) {
   background-color: #046fa2;
   color: white;
 }
+
 @media only screen and (max-device-width: 981px) {
-  table  {
+  table {
     border: 1px solid #80808012;
     border-collapse: collapse;
     padding: 20px;
     margin: 50px auto;
-    overflow-y:scroll;
-    width:100%;
-    display:block;
+    overflow-y: scroll;
+    width: 100%;
+    display: block;
   }
 }
+
 .taskmanager-h1 {
   font-size: 30px;
   color: #ffffff;
@@ -74,4 +78,11 @@ table tr:nth-child(even) {
   height: 3px;
   right: 0;
   margin: 0 auto;
+}
+
+.desciption-single {
+  max-width: 150px;
+  border: 1px solid #000000;
+  word-wrap: break-word;
+
 }

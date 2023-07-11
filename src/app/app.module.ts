@@ -10,6 +10,7 @@ import {RouterModule} from "@angular/router";
 import { PopupComponent } from './components/popup/popup.component';
 import { ContactFormComponent } from './components/popup/add-project/contact-form.component';
 import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     RouterModule,
     FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
