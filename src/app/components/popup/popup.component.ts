@@ -8,27 +8,21 @@ import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 export class PopupComponent implements OnInit {
   @Output() closePopup: EventEmitter<void> = new EventEmitter<void>();
   @Output() insertData: EventEmitter<void> = new EventEmitter<void>();
-  insertedData: any;
-  name:any;
-  description:any;
-  // Other component logic
+
+  insertedData: any = {};
+  name: any;
+  description: any;
 
 
   close() {
     this.closePopup.emit();
   }
   addContact() {
-    this.insertData.emit();
+    this.insertData.emit(this.insertedData);
   }
 
   constructor() { }
 
-  insertDataMethod(data: string, id: string) {
-    // @ts-ignore
-    this.insertData.emit(data);
-  }
-
   ngOnInit(): void {
   }
-
 }

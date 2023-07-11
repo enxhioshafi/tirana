@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-contact-form',
@@ -10,15 +12,28 @@ export class ContactFormComponent implements OnInit {
   description: string = '';
   showPopup: boolean = false;
 
+  constructor(private http: HttpClient) { }
 
   openPopup() {
     this.showPopup = true;
   }
 
   addContact($event: MouseEvent) {
-    // Perform your insert logic here
-    console.log('Adding contact:', this.name, this.description);
-    this.closePopup();
+    const data = {
+      name: this.name,
+      description: this.description
+    };
+
+    this.http.post('http://localhost:8080/projects', data)
+      .subscribe(
+        response => {
+          console.log('Contact added successfully:', response);
+          this.closePopup();
+        },
+        error => {
+          console.error('Error adding contact:', error);
+        }
+      );
   }
 
   closePopup() {
@@ -27,7 +42,6 @@ export class ContactFormComponent implements OnInit {
     this.description = '';
   }
 
-  constructor() { }
 
   ngOnInit(): void {
   }

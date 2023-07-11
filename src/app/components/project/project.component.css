@@ -41,7 +41,7 @@ table tr:nth-child(even) {
 
 .taskmanager-h1 {
   font-size: 30px;
-  color: #046fa2;
+  color: #ffffff;
   font-weight: 800;
   letter-spacing: 0.05px;
   text-align: center;
@@ -55,7 +55,7 @@ table tr:nth-child(even) {
   left: 0;
   top: 85px;
   content: '';
-  background: #266fa2;
+  background: #ffffff;
   width: 60px;
   height: 3px;
   right: 0;

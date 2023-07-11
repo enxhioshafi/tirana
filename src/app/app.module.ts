@@ -9,6 +9,7 @@ import {ProjectInfoComponent} from './components/project-info/project-info.compo
 import {RouterModule} from "@angular/router";
 import { PopupComponent } from './components/popup/popup.component';
 import { ContactFormComponent } from './components/popup/add-project/contact-form.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ContactFormComponent } from './components/popup/add-project/contact-for
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
