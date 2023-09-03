@@ -1,3 +1,14 @@
+body {
+  background: url(../../../assets/images/computer.jpg) no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.container {
+  background: url(../../../assets/images/computer.jpg) no-repeat;
+  background-size: cover;
+  height: 100%;
+}
 
 table, th, td {
   border: 1px solid #80808012;
@@ -6,13 +17,12 @@ table, th, td {
   margin: 50px auto;
 }
 
-
 table tr:nth-child(odd) {
-  background-color: #fbfbfbe3;
+  background-color: #fbfbfb;
 }
 
 table tr:nth-child(even) {
-  background-color: #ffffffb5;
+  background-color: #ffffff;
 }
 
 .single-user button {
@@ -31,20 +41,6 @@ table tr:nth-child(even) {
 }
 
 .single-user th {
-  background-color: #046fa2;
-  color: white;
-}
-
-button {
-  padding: 10px 10px;
-  border-radius: 30px;
-  margin: 2px;
-  border: 0px solid #fff;
-  position: relative;
-  display: block;
-}
-
-button:hover {
   background-color: #046fa2;
   color: white;
 }
@@ -89,8 +85,4 @@ button:hover {
   border: 1px solid #000000;
   word-wrap: break-word;
 
-}
-
-.back {
-  padding: 10px 35px !important;
 }

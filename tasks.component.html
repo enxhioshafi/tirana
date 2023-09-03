@@ -1,0 +1,27 @@
+<div class="container taskmanagment-single">
+    <table [ngClass]="'single-user'">
+      <thead>
+        <tr>
+          <th>Project</th>
+          <th>Description</th>
+          <th>TaskStatus</th>
+          <th>Priority</th>
+          <th>DeadLine</th>
+          <th>Assigned</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks" [routerLink]="['/task', task.id]">
+          <td class="name">{{ task.name }}</td>
+          <td class="description">{{ task.description }}</td>
+          <td class="status">{{ task.taskStatus }}</td>
+          <td class="priority">{{ task.priority }}</td>
+          <td class="deadline">{{ task.deadLine }}</td>
+          <td><i class="fa fa-user" aria-hidden="true"></i>
+            {{ task.assignedTo }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

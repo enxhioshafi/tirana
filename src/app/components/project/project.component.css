@@ -1,3 +1,9 @@
+body {
+  background: url(../../../assets/images/computer.jpg) no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
 table, th, td {
   border: 1px solid #80808012;
   border-collapse: collapse;
@@ -24,7 +30,7 @@ table tr:nth-child(even) {
 }
 
 .taskmanager button {
-  padding: 10px 10px;
+  padding: 10px 20px;
   border-radius: 30px;
   margin: 2px;
   border: 0px solid #fff
@@ -67,6 +73,11 @@ table tr:nth-child(even) {
   margin: 0 auto;
 }
 
+.taskmanagment {
+  background: url(../../../assets/images/computer.jpg) no-repeat;
+  background-size: cover;
+  height: 100%;
+}
 
 @media only screen and (max-device-width: 981px) {
   table {
@@ -90,39 +101,4 @@ input, textarea {
 
   border-radius: 0px;
   border: 0px solid #046fa2;
-}
-
-pagination-controls{
-  padding: 0.1875rem 0.625rem;
-  color: #fff!important;
-  cursor: default;
-  margin-top: 50px;
-  text-align: right;
-}
-.current {
-  padding: 0.1875rem 0.625rem;
-  background: #046fa2!important;
-  color: #fefefe;
-  cursor: default;
-}
-.view {
-  color: #389B6B;
-}
-.update {
-  color: #3C8ECA;
-}
-.delete {
-  color: #D84E38;
-}
-.add {
-  padding: 10px 35px!important;
-}
-.save {
-  padding: 10px 35px!important;
-}
-.cancel {
-  padding: 10px 35px!important;
-}
-td:nth-child(n + 1):nth-child(-n + 2) {
-  width: 10%;
 }

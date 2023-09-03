@@ -1,0 +1,21 @@
+<div class="container taskmanagment-single">
+  <h1 [ngClass]="'taskmanager-h1'">TASK MANAGMENT</h1>
+  <button (click)="goBack()" class="back"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+     Back</button>
+  <table [ngClass]="'single-user'">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>{{project.id }}</td>
+      <td>{{project.name}}</td>
+      <td class="desciption-single">{{project.description}}</td>
+    </tr>
+  </table>
+  <br>
+ 
+</div>
+
+
