@@ -1,5 +1,5 @@
 <div class="container taskmanagment">
-  <h1 [ngClass]="'taskmanager-h1'">PROJECT MANAGMENT</h1>
+  <h1 [ngClass]="'taskmanager-h1'">TASK MANAGMENT</h1>
   <table [ngClass]="'taskmanager'">
     <tr>
       <th>ID</th>
@@ -24,27 +24,23 @@
         </ng-template>
       </td>
       <td>
-        <button (click)="redirectToProjectInfo(project.id)" class="view"> <i class="fa fa-eye" aria-hidden="true"></i> View</button>
+        <button (click)="redirectToProjectInfo(project.id)">View</button>
       </td>
       <td>
-        <button *ngIf="!project.isEditing" (click)="toggleEditMode(project)" class="update"><i class='far fa-edit'></i> Update</button>
-        <button *ngIf="project.isEditing" (click)="updateData(project)" class="save">Save</button>
-        <button *ngIf="project.isEditing" (click)="cancelEdit(project)" class="cancel">Cancel</button>
+        <button *ngIf="!project.isEditing" (click)="toggleEditMode(project)">Update</button>
+        <button *ngIf="project.isEditing" (click)="updateData(project)">Save</button>
+        <button *ngIf="project.isEditing" (click)="cancelEdit(project)">Cancel</button>
       </td>
       <td>
-        <button (click)="deleteData(project)" class="delete"> <i class="fa fa-trash" aria-hidden="true"></i>
-           Delete</button>
+        <button (click)="deleteData(project)">Delete</button>
       </td>
     </tr>
-<br>
-    <button (click)="openPopup()" class="add">ADD <i class="fa fa-plus" aria-hidden="true"></i>
-    </button>
+    <br>
+    <button (click)="openPopup()">ADD+</button>
 
     <app-popup *ngIf="showPopup" (insertData)="insertData($event)" (closePopup)="closePopup()"></app-popup>
   </table>
-<div class="container col-4" style="float: right">
   <!-- Pagination controls -->
   <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
-</div>
   <br>
 </div>

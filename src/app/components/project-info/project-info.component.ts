@@ -41,7 +41,4 @@ export class ProjectInfoComponent implements OnInit {
       }
     );
   }
-  goBack(): void {
-    this.router.navigate(['/']); // Modify the route path to your desired back route
-  }
 }
