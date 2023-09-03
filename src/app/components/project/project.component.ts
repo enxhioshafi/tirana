@@ -29,6 +29,9 @@ export class ProjectComponent implements OnInit {
   redirectToProjectInfo(id: string): void {
     this.router.navigate(['/project-info', id]);
   }
+  redirectToTaskDetail(taskId: string): void {
+    this.router.navigate(['/task-detail', taskId]); // Use 'taskId' here
+  }
 
 // Make the HTTP GET request
 

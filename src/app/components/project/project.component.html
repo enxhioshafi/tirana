@@ -5,7 +5,8 @@
       <th>ID</th>
       <th>Name</th>
       <th>Description</th>
-      <th>Details</th>
+      <th>Project</th>
+      <th> Tasks</th>
       <th>Update</th>
       <th>Delete</th>
     </tr>
@@ -24,7 +25,10 @@
         </ng-template>
       </td>
       <td>
-        <button (click)="redirectToProjectInfo(project.id)" class="view"> <i class="fa fa-eye" aria-hidden="true"></i> View</button>
+        <button (click)="redirectToProjectInfo(project.id)" class="view"> <i class="fa fa-eye" aria-hidden="true"></i> View Project</button>
+      </td>
+      <td>
+        <button (click)="redirectToTaskDetail(project.id)" class="view"> <i class="fa fa-eye" aria-hidden="true"></i> View Tasks</button>
       </td>
       <td>
         <button *ngIf="!project.isEditing" (click)="toggleEditMode(project)" class="update"><i class='far fa-edit'></i> Update</button>

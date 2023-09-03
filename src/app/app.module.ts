@@ -11,6 +11,11 @@ import { PopupComponent } from './components/popup/popup.component';
 import { ContactFormComponent } from './components/popup/add-project/contact-form.component';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { TasksComponent } from './tasks/tasks.component';
+import { TaskDetailComponent } from './task-detail/task-detail.component';
+import { DatePipe } from '@angular/common';
+
+
 
 
 @NgModule({
@@ -20,6 +25,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ProjectInfoComponent,
     PopupComponent,
     ContactFormComponent,
+    TasksComponent,
+    TaskDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +36,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FormsModule,
     NgxPaginationModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {
