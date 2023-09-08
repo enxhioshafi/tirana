@@ -14,6 +14,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskDetailComponent } from './task-detail/task-detail.component';
 import { DatePipe } from '@angular/common';
+import { CustomDateInputComponent } from './custom-date-input/custom-date-input.component';
 
 
 
@@ -27,6 +28,7 @@ import { DatePipe } from '@angular/common';
     ContactFormComponent,
     TasksComponent,
     TaskDetailComponent,
+    CustomDateInputComponent,
   ],
   imports: [
     BrowserModule,

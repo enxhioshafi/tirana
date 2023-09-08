@@ -29,8 +29,10 @@
         </td>
         
         <td class="timeline">
-          <input type="datetime-local" [(ngModel)]="task.deadLine" (ngModelChange)="saveDeadline(task)" [value]="task.deadLine">
-          <p>{{ task.deadLine }}</p>
+          <app-custom-date-input
+          [(ngModel)]="task.deadLine"
+          (ngModelChange)="saveDeadline(task)"
+        ></app-custom-date-input>
         </td>
          
          <td><img src="../../assets/images/male-avatar.webp" width="50" height="50" style="display: block;

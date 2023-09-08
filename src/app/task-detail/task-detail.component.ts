@@ -4,8 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 
 
-
-
 @Component({
   selector: 'app-task-detail',
   templateUrl: './task-detail.component.html',

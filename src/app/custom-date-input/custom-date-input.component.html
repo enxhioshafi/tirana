@@ -1,0 +1,9 @@
+<input
+  type="datetime-local"
+  [(ngModel)]="formattedDate"
+  (input)="onInput()"
+  (blur)="onBlur()"
+  [disabled]="isDisabled"
+/>
+
+
